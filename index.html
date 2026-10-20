@@ -1,0 +1,1096 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Healthy Lifestyle - Personal Fitness Programme Project</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            400: '#4ade80',
+                            500: '#22c55e',
+                            600: '#16a34a',
+                            700: '#15803d',
+                            900: '#14532d',
+                            accent: '#00f2fe',
+                            neon: '#10b981'
+                        },
+                        dark: {
+                            base: '#0f172a',
+                            card: '#1e293b',
+                            border: '#334155'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #0f172a;
+            color: #f8fafc;
+        }
+        .glass-card {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .glass-card-hover:hover {
+            border-color: rgba(16, 185, 129, 0.4);
+            transform: translateY(-4px);
+            box-shadow: 0 12px 30px -10px rgba(16, 185, 129, 0.2);
+        }
+        .text-gradient {
+            background: linear-gradient(135deg, #4ade80 0%, #00f2fe 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .bg-gradient-brand {
+            background: linear-gradient(135deg, #10b981 0%, #06b6d4 100%);
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #0f172a;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #334155;
+            border-radius: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+            background: #10b981;
+        }
+    </style>
+</head>
+<body class="custom-scrollbar selection:bg-brand-500 selection:text-white">
+
+    <!-- NAVIGATION BAR -->
+    <nav class="fixed top-0 left-0 w-full z-50 glass-card border-b border-slate-800/80 px-4 lg:px-8 py-3">
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
+            <a href="#" class="flex items-center gap-2">
+                <div class="w-10 h-10 rounded-xl bg-gradient-brand flex items-center justify-center text-slate-950 font-black text-xl shadow-lg shadow-emerald-500/20">
+                    <i class="fa-solid font-bold fa-heart-pulse text-slate-950"></i>
+                </div>
+                <div class="flex flex-col">
+                    <span class="font-extrabold text-lg tracking-tight leading-none text-white">FIT<span class="text-brand-400">TEEN</span></span>
+                    <span class="text-[10px] text-slate-400 font-medium tracking-wider">PROJECT WORK</span>
+                </div>
+            </a>
+
+            <!-- Desktop Nav Links -->
+            <div class="hidden md:flex items-center gap-6 text-sm font-semibold text-slate-300">
+                <a href="#research" class="hover:text-brand-400 transition-colors">1. Research</a>
+                <a href="#planner" class="hover:text-brand-400 transition-colors">2. 4-Week Plan</a>
+                <a href="#advice" class="hover:text-brand-400 transition-colors">3. Advice & Tools</a>
+                <a href="#campaign" class="hover:text-brand-400 transition-colors">4. Campaign</a>
+                <a href="#presentation" class="hover:text-brand-400 transition-colors">5. Presentation</a>
+            </div>
+
+            <div class="flex items-center gap-3">
+                <a href="#presentation" class="px-4 py-2 text-xs font-bold rounded-xl bg-gradient-brand text-slate-950 hover:brightness-110 transition-all shadow-md shadow-emerald-500/20 flex items-center gap-2">
+                    <i class="fa-solid fa-play"></i>
+                    <span>Presentation Mode</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <header class="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden min-h-screen flex items-center justify-center">
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?q=80&w=1920&auto=format&fit=crop" 
+                 onerror="this.src='https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=1920&auto=format&fit=crop'"
+                 alt="Teenager Fitness" class="w-full h-full object-cover object-center opacity-20 filter blur-[2px]">
+            <div class="absolute inset-0 bg-gradient-to-t from-dark-base via-dark-base/80 to-transparent"></div>
+            <div class="absolute inset-0 bg-gradient-to-r from-dark-base via-transparent to-dark-base/80"></div>
+        </div>
+
+        <div class="relative z-10 max-w-5xl mx-auto px-4 text-center">
+            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card text-brand-400 text-xs font-bold mb-6 border border-brand-500/30 animate-pulse">
+                <i class="fa-solid fa-fire"></i>
+                <span>Group Project: Healthy Lifestyle</span>
+            </div>
+
+            <h1 class="text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tight mb-6 leading-tight">
+                Active Teen, <br class="hidden sm:inline" />
+                <span class="text-gradient">Bright Future!</span>
+            </h1>
+
+            <p class="text-lg md:text-xl text-slate-300 max-w-2xl mx-auto font-normal mb-8 leading-relaxed">
+                <span class="text-brand-400 font-semibold">"Move Today, Lead Tomorrow!"</span> — A realistic four-week fitness programme and comprehensive healthy lifestyle guide designed specifically for teenagers.
+            </p>
+
+            <div class="flex flex-wrap items-center justify-center gap-4">
+                <a href="#planner" class="px-7 py-3.5 rounded-xl bg-gradient-brand text-slate-950 font-bold hover:shadow-lg hover:shadow-emerald-500/25 transition-all text-sm flex items-center gap-2">
+                    <i class="fa-solid fa-calendar-check text-base"></i>
+                    <span>Explore 4-Week Plan</span>
+                </a>
+                <a href="#research" class="px-7 py-3.5 rounded-xl glass-card font-bold text-white hover:bg-slate-800 transition-all text-sm border border-slate-700 flex items-center gap-2">
+                    <i class="fa-solid fa-microscope text-brand-400"></i>
+                    <span>View Research</span>
+                </a>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-16 max-w-4xl mx-auto text-left">
+                <div class="glass-card p-4 rounded-2xl border border-slate-800">
+                    <div class="text-brand-400 text-2xl font-black mb-1">150-300 min</div>
+                    <div class="text-xs text-slate-400 font-medium">Recommended Weekly Exercise</div>
+                </div>
+                <div class="glass-card p-4 rounded-2xl border border-slate-800">
+                    <div class="text-cyan-400 text-2xl font-black mb-1">4 Weeks</div>
+                    <div class="text-xs text-slate-400 font-medium">Personalized Plan</div>
+                </div>
+                <div class="glass-card p-4 rounded-2xl border border-slate-800">
+                    <div class="text-emerald-400 text-2xl font-black mb-1">8 Tips</div>
+                    <div class="text-xs text-slate-400 font-medium">Teen Lifestyle Advice</div>
+                </div>
+                <div class="glass-card p-4 rounded-2xl border border-slate-800">
+                    <div class="text-indigo-400 text-2xl font-black mb-1">100%</div>
+                    <div class="text-xs text-slate-400 font-medium">Teen-Focused & Realistic</div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- STEP 1: RESEARCH SECTION -->
+    <section id="research" class="py-20 px-4 max-w-7xl mx-auto">
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+            <div>
+                <span class="text-brand-400 font-bold text-sm tracking-wider uppercase">STEP 1</span>
+                <h2 class="text-3xl md:text-4xl font-extrabold mt-1 text-white">Research & Physical Activities</h2>
+            </div>
+            <p class="text-slate-400 text-sm max-w-md mt-2 md:mt-0">
+                Exploring different types of exercise, health benefits, equipment needed, and safety guidelines for teenagers.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+            <div class="glass-card rounded-2xl overflow-hidden glass-card-hover transition-all duration-300 group">
+                <div class="h-48 overflow-hidden relative">
+                    <img src="https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?q=80&w=800&auto=format&fit=crop" 
+                         alt="Aerobic Exercise" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-dark-card via-transparent to-transparent"></div>
+                    <span class="absolute top-3 right-3 bg-slate-900/80 backdrop-blur-md text-brand-400 text-xs font-bold px-3 py-1 rounded-full border border-brand-500/30">
+                        Endurance
+                    </span>
+                </div>
+                <div class="p-6">
+                    <div class="flex items-center gap-3 mb-2">
+                        <i class="fa-solid fa-person-running text-brand-400 text-xl"></i>
+                        <h3 class="font-bold text-xl text-white">Aerobic Exercise</h3>
+                    </div>
+                    <p class="text-slate-300 text-sm leading-relaxed mb-4">
+                        Jogging, cycling, and swimming. Strengthens the cardiovascular system, improves stamina, and oxygenates the body.
+                    </p>
+                    <div class="text-xs text-brand-400 font-semibold bg-brand-950/50 p-2.5 rounded-lg border border-brand-800/40">
+                        <i class="fa-solid fa-circle-check mr-1"></i> Target: 3-4 times a week, 30 minutes each.
+                    </div>
+                </div>
+            </div>
+
+            <div class="glass-card rounded-2xl overflow-hidden glass-card-hover transition-all duration-300 group">
+                <div class="h-48 overflow-hidden relative">
+                    <img src="https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?q=80&w=800&auto=format&fit=crop" 
+                         alt="Strength Training" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-dark-card via-transparent to-transparent"></div>
+                    <span class="absolute top-3 right-3 bg-slate-900/80 backdrop-blur-md text-cyan-400 text-xs font-bold px-3 py-1 rounded-full border border-cyan-500/30">
+                        Muscle & Bone
+                    </span>
+                </div>
+                <div class="p-6">
+                    <div class="flex items-center gap-3 mb-2">
+                        <i class="fa-solid fa-dumbbell text-cyan-400 text-xl"></i>
+                        <h3 class="font-bold text-xl text-white">Strength Training</h3>
+                    </div>
+                    <p class="text-slate-300 text-sm leading-relaxed mb-4">
+                        Push-ups, pull-ups, and light dumbbells. Essential for building muscle strength, posture, and bone density.
+                    </p>
+                    <div class="text-xs text-cyan-400 font-semibold bg-cyan-950/50 p-2.5 rounded-lg border border-cyan-800/40">
+                        <i class="fa-solid fa-circle-check mr-1"></i> Target: 2-3 sessions weekly with proper form.
+                    </div>
+                </div>
+            </div>
+
+            <div class="glass-card rounded-2xl overflow-hidden glass-card-hover transition-all duration-300 group">
+                <div class="h-48 overflow-hidden relative">
+                    <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?q=80&w=800&auto=format&fit=crop" 
+                         alt="Flexibility Exercises" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-dark-card via-transparent to-transparent"></div>
+                    <span class="absolute top-3 right-3 bg-slate-900/80 backdrop-blur-md text-emerald-400 text-xs font-bold px-3 py-1 rounded-full border border-emerald-500/30">
+                        Mobility
+                    </span>
+                </div>
+                <div class="p-6">
+                    <div class="flex items-center gap-3 mb-2">
+                        <i class="fa-solid fa-child-reaching text-emerald-400 text-xl"></i>
+                        <h3 class="font-bold text-xl text-white">Flexibility & Yoga</h3>
+                    </div>
+                    <p class="text-slate-300 text-sm leading-relaxed mb-4">
+                        Stretching exercises and yoga routines. Improves joint range of motion, muscle elasticity, and prevents injuries.
+                    </p>
+                    <div class="text-xs text-emerald-400 font-semibold bg-emerald-950/50 p-2.5 rounded-lg border border-emerald-800/40">
+                        <i class="fa-solid fa-circle-check mr-1"></i> Target: Daily stretching before and after workouts.
+                    </div>
+                </div>
+            </div>
+
+            <div class="glass-card rounded-2xl overflow-hidden glass-card-hover transition-all duration-300 group">
+                <div class="h-48 overflow-hidden relative">
+                    <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?q=80&w=800&auto=format&fit=crop" 
+                         alt="Balance & Coordination" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-dark-card via-transparent to-transparent"></div>
+                    <span class="absolute top-3 right-3 bg-slate-900/80 backdrop-blur-md text-amber-400 text-xs font-bold px-3 py-1 rounded-full border border-amber-500/30">
+                        Agility
+                    </span>
+                </div>
+                <div class="p-6">
+                    <div class="flex items-center gap-3 mb-2">
+                        <i class="fa-solid fa-person-skating text-amber-400 text-xl"></i>
+                        <h3 class="font-bold text-xl text-white">Balance & Coordination</h3>
+                    </div>
+                    <p class="text-slate-300 text-sm leading-relaxed mb-4">
+                        Single-leg stances, agility ladders, and balance boards. Enhances athletic performance and body awareness.
+                    </p>
+                    <div class="text-xs text-amber-400 font-semibold bg-amber-950/50 p-2.5 rounded-lg border border-amber-800/40">
+                        <i class="fa-solid fa-circle-check mr-1"></i> Target: 2 sessions weekly for 15-20 minutes.
+                    </div>
+                </div>
+            </div>
+
+            <div class="glass-card rounded-2xl overflow-hidden glass-card-hover transition-all duration-300 group md:col-span-2 lg:col-span-2">
+                <div class="h-48 overflow-hidden relative">
+                    <img src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?q=80&w=1200&auto=format&fit=crop" 
+                         alt="Outdoor Activities & Team Sports" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-dark-card via-transparent to-transparent"></div>
+                    <span class="absolute top-3 right-3 bg-slate-900/80 backdrop-blur-md text-indigo-400 text-xs font-bold px-3 py-1 rounded-full border border-indigo-500/30">
+                        Social & Outdoor
+                    </span>
+                </div>
+                <div class="p-6">
+                    <div class="flex items-center gap-3 mb-2">
+                        <i class="fa-solid fa-people-group text-indigo-400 text-xl"></i>
+                        <h3 class="font-bold text-xl text-white">Outdoor Activities & Team Sports</h3>
+                    </div>
+                    <p class="text-slate-300 text-sm leading-relaxed mb-4">
+                        Football, basketball, and volleyball. Combines intense aerobic exercise with teamwork, social bonding, and mental refreshment in fresh air.
+                    </p>
+                    <div class="text-xs text-indigo-400 font-semibold bg-indigo-950/50 p-2.5 rounded-lg border border-indigo-800/40">
+                        <i class="fa-solid fa-circle-check mr-1"></i> Target: Weekend recreational games with friends.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="glass-card p-6 rounded-2xl border border-emerald-500/20">
+                <div class="flex items-center gap-3 mb-4 text-emerald-400">
+                    <i class="fa-solid fa-heart-pulse text-2xl"></i>
+                    <h4 class="font-bold text-lg text-white">Health Benefits</h4>
+                </div>
+                <ul class="space-y-2.5 text-sm text-slate-300">
+                    <li class="flex items-start gap-2"><i class="fa-solid fa-check text-emerald-400 mt-1"></i> Boosts cardiovascular health and endurance</li>
+                    <li class="flex items-start gap-2"><i class="fa-solid fa-check text-emerald-400 mt-1"></i> Releases endorphins to relieve stress and anxiety</li>
+                    <li class="flex items-start gap-2"><i class="fa-solid fa-check text-emerald-400 mt-1"></i> Improves sleep quality, memory, and concentration</li>
+                    <li class="flex items-start gap-2"><i class="fa-solid fa-check text-emerald-400 mt-1"></i> Strengthens the immune system and bones</li>
+                </ul>
+            </div>
+
+            <div class="glass-card p-6 rounded-2xl border border-rose-500/20">
+                <div class="flex items-center gap-3 mb-4 text-rose-400">
+                    <i class="fa-solid fa-triangle-exclamation text-2xl"></i>
+                    <h4 class="font-bold text-lg text-white">Possible Risks</h4>
+                </div>
+                <ul class="space-y-2.5 text-sm text-slate-300">
+                    <li class="flex items-start gap-2"><i class="fa-solid fa-xmark text-rose-400 mt-1"></i> Overtraining without sufficient rest days</li>
+                    <li class="flex items-start gap-2"><i class="fa-solid fa-xmark text-rose-400 mt-1"></i> Muscle strains caused by skipping warm-up exercises</li>
+                    <li class="flex items-start gap-2"><i class="fa-solid fa-xmark text-rose-400 mt-1"></i> Injuries from improper form or unsupportive footwear</li>
+                </ul>
+            </div>
+
+            <div class="glass-card p-6 rounded-2xl border border-cyan-500/20">
+                <div class="flex items-center gap-3 mb-4 text-cyan-400">
+                    <i class="fa-solid fa-toolbox text-2xl"></i>
+                    <h4 class="font-bold text-lg text-white">Equipment Needed</h4>
+                </div>
+                <ul class="space-y-2.5 text-sm text-slate-300">
+                    <li class="flex items-start gap-2"><i class="fa-solid fa-shoe-prints text-cyan-400 mt-1"></i> Supportive athletic running shoes</li>
+                    <li class="flex items-start gap-2"><i class="fa-solid fa-bottle-water text-cyan-400 mt-1"></i> Reusable water bottle (1.5 - 2L)</li>
+                    <li class="flex items-start gap-2"><i class="fa-solid fa-mat text-cyan-400 mt-1"></i> Comfortable exercise/yoga mat</li>
+                    <li class="flex items-start gap-2"><i class="fa-solid fa-shirt text-cyan-400 mt-1"></i> Breathable sportswear clothing</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- STEP 2: 4-WEEK PROGRAMME PLANNER -->
+    <section id="planner" class="py-20 px-4 bg-slate-900/50 border-y border-slate-800">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center max-w-2xl mx-auto mb-12">
+                <span class="text-brand-400 font-bold text-sm tracking-wider uppercase">STEP 2</span>
+                <h2 class="text-3xl md:text-4xl font-extrabold text-white mt-1">4-Week Exercise Timetable</h2>
+                <p class="text-slate-400 text-sm mt-2">
+                    A realistic daily exercise plan tailored for teenagers. Check off your workouts as you complete them!
+                </p>
+            </div>
+
+            <div class="flex flex-wrap items-center justify-center gap-2 mb-8" id="day-filters">
+                <button onclick="filterDays('all', this)" class="filter-btn active-filter px-4 py-2 rounded-xl text-xs font-bold transition-all bg-gradient-brand text-slate-950">
+                    All Days
+                </button>
+                <button onclick="filterDays('Monday', this)" class="filter-btn px-4 py-2 rounded-xl text-xs font-bold transition-all bg-slate-800 text-slate-300 hover:text-white">
+                    Monday
+                </button>
+                <button onclick="filterDays('Tuesday', this)" class="filter-btn px-4 py-2 rounded-xl text-xs font-bold transition-all bg-slate-800 text-slate-300 hover:text-white">
+                    Tuesday
+                </button>
+                <button onclick="filterDays('Wednesday', this)" class="filter-btn px-4 py-2 rounded-xl text-xs font-bold transition-all bg-slate-800 text-slate-300 hover:text-white">
+                    Wednesday
+                </button>
+                <button onclick="filterDays('Thursday', this)" class="filter-btn px-4 py-2 rounded-xl text-xs font-bold transition-all bg-slate-800 text-slate-300 hover:text-white">
+                    Thursday
+                </button>
+                <button onclick="filterDays('Friday', this)" class="filter-btn px-4 py-2 rounded-xl text-xs font-bold transition-all bg-slate-800 text-slate-300 hover:text-white">
+                    Friday
+                </button>
+                <button onclick="filterDays('Saturday', this)" class="filter-btn px-4 py-2 rounded-xl text-xs font-bold transition-all bg-slate-800 text-slate-300 hover:text-white">
+                    Saturday
+                </button>
+                <button onclick="filterDays('Sunday', this)" class="filter-btn px-4 py-2 rounded-xl text-xs font-bold transition-all bg-slate-800 text-slate-300 hover:text-white">
+                    Sunday
+                </button>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="timetable-cards">
+                <!-- Monday -->
+                <div class="timetable-card glass-card p-6 rounded-2xl border border-slate-800 flex flex-col justify-between" data-day="Monday">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-400 text-xs font-bold border border-emerald-500/20">
+                                Monday
+                            </span>
+                            <span class="text-xs text-slate-400"><i class="fa-regular fa-clock mr-1"></i>30 min</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Jogging & Warm-up</h3>
+                        <p class="text-xs text-slate-400 mb-4">Outdoor light cardio session with dynamic warm-ups.</p>
+                        
+                        <div class="space-y-2 mb-6">
+                            <div class="text-xs bg-slate-800/80 p-2.5 rounded-lg text-slate-300">
+                                <span class="font-bold text-brand-400">Warm-up:</span> 5 min joint mobility exercises
+                            </div>
+                            <div class="text-xs bg-slate-800/80 p-2.5 rounded-lg text-slate-300">
+                                <span class="font-bold text-cyan-400">Cool-down:</span> 5 min leg stretching
+                            </div>
+                            <div class="text-xs bg-slate-800/80 p-2.5 rounded-lg text-slate-300">
+                                <span class="font-bold text-indigo-400">Goal:</span> Improve endurance
+                            </div>
+                        </div>
+                    </div>
+
+                    <button onclick="toggleWorkout('Monday', this)" id="btn-Monday" class="w-full py-2.5 rounded-xl border border-slate-700 bg-slate-800 hover:bg-emerald-600 hover:border-emerald-500 text-xs font-bold text-white transition-all flex items-center justify-center gap-2">
+                        <i class="fa-regular fa-circle-check"></i>
+                        <span>Mark as Completed</span>
+                    </button>
+                </div>
+
+                <!-- Tuesday -->
+                <div class="timetable-card glass-card p-6 rounded-2xl border border-slate-800 flex flex-col justify-between" data-day="Tuesday">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="px-3 py-1 rounded-full bg-cyan-500/10 text-cyan-400 text-xs font-bold border border-cyan-500/20">
+                                Tuesday
+                            </span>
+                            <span class="text-xs text-slate-400"><i class="fa-regular fa-clock mr-1"></i>25 min</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Yoga & Stretching</h3>
+                        <p class="text-xs text-slate-400 mb-4">Flexibility routine focusing on posture and deep breathing.</p>
+                        
+                        <div class="space-y-2 mb-6">
+                            <div class="text-xs bg-slate-800/80 p-2.5 rounded-lg text-slate-300">
+                                <span class="font-bold text-brand-400">Warm-up:</span> 3 min gentle spine mobility
+                            </div>
+                            <div class="text-xs bg-slate-800/80 p-2.5 rounded-lg text-slate-300">
+                                <span class="font-bold text-cyan-400">Cool-down:</span> Relaxation & mindfulness
+                            </div>
+                            <div class="text-xs bg-slate-800/80 p-2.5 rounded-lg text-slate-300">
+                                <span class="font-bold text-indigo-400">Goal:</span> Increase flexibility
+                            </div>
+                        </div>
+                    </div>
+
+                    <button onclick="toggleWorkout('Tuesday', this)" id="btn-Tuesday" class="w-full py-2.5 rounded-xl border border-slate-700 bg-slate-800 hover:bg-emerald-600 hover:border-emerald-500 text-xs font-bold text-white transition-all flex items-center justify-center gap-2">
+                        <i class="fa-regular fa-circle-check"></i>
+                        <span>Mark as Completed</span>
+                    </button>
+                </div>
+
+                <!-- Wednesday -->
+                <div class="timetable-card glass-card p-6 rounded-2xl border border-slate-800 flex flex-col justify-between" data-day="Wednesday">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="px-3 py-1 rounded-full bg-indigo-500/10 text-indigo-400 text-xs font-bold border border-indigo-500/20">
+                                Wednesday
+                            </span>
+                            <span class="text-xs text-slate-400"><i class="fa-regular fa-clock mr-1"></i>35 min</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Strength Training</h3>
+                        <p class="text-xs text-slate-400 mb-4">Bodyweight exercises: push-ups, squats, and core plank routine.</p>
+                        
+                        <div class="space-y-2 mb-6">
+                            <div class="text-xs bg-slate-800/80 p-2.5 rounded-lg text-slate-300">
+                                <span class="font-bold text-brand-400">Warm-up:</span> 5 min shoulder & arm circles
+                            </div>
+                            <div class="text-xs bg-slate-800/80 p-2.5 rounded-lg text-slate-300">
+                                <span class="font-bold text-cyan-400">Cool-down:</span> Upper & lower body stretch
+                            </div>
+                            <div class="text-xs bg-slate-800/80 p-2.5 rounded-lg text-slate-300">
+                                <span class="font-bold text-indigo-400">Goal:</span> Build muscular strength
+                            </div>
+                        </div>
+                    </div>
+
+                    <button onclick="toggleWorkout('Wednesday', this)" id="btn-Wednesday" class="w-full py-2.5 rounded-xl border border-slate-700 bg-slate-800 hover:bg-emerald-600 hover:border-emerald-500 text-xs font-bold text-white transition-all flex items-center justify-center gap-2">
+                        <i class="fa-regular fa-circle-check"></i>
+                        <span>Mark as Completed</span>
+                    </button>
+                </div>
+
+                <!-- Thursday -->
+                <div class="timetable-card glass-card p-6 rounded-2xl border border-slate-800 flex flex-col justify-between" data-day="Thursday">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="px-3 py-1 rounded-full bg-amber-500/10 text-amber-400 text-xs font-bold border border-amber-500/20">
+                                Thursday
+                            </span>
+                            <span class="text-xs text-slate-400"><i class="fa-regular fa-clock mr-1"></i>30 min</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Active Rest / Light Walk</h3>
+                        <p class="text-xs text-slate-400 mb-4">Low-intensity outdoor walking or casual cycling in fresh air.</p>
+                        
+                        <div class="space-y-2 mb-6">
+                            <div class="text-xs bg-slate-800/80 p-2.5 rounded-lg text-slate-300">
+                                <span class="font-bold text-brand-400">Warm-up:</span> Not required
+                            </div>
+                            <div class="text-xs bg-slate-800/80 p-2.5 rounded-lg text-slate-300">
+                                <span class="font-bold text-cyan-400">Cool-down:</span> Light hamstring stretch
+                            </div>
+                            <div class="text-xs bg-slate-800/80 p-2.5 rounded-lg text-slate-300">
+                                <span class="font-bold text-indigo-400">Goal:</span> Active recovery
+                            </div>
+                        </div>
+                    </div>
+
+                    <button onclick="toggleWorkout('Thursday', this)" id="btn-Thursday" class="w-full py-2.5 rounded-xl border border-slate-700 bg-slate-800 hover:bg-emerald-600 hover:border-emerald-500 text-xs font-bold text-white transition-all flex items-center justify-center gap-2">
+                        <i class="fa-regular fa-circle-check"></i>
+                        <span>Mark as Completed</span>
+                    </button>
+                </div>
+
+                <!-- Friday -->
+                <div class="timetable-card glass-card p-6 rounded-2xl border border-slate-800 flex flex-col justify-between" data-day="Friday">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="px-3 py-1 rounded-full bg-rose-500/10 text-rose-400 text-xs font-bold border border-rose-500/20">
+                                Friday
+                            </span>
+                            <span class="text-xs text-slate-400"><i class="fa-regular fa-clock mr-1"></i>30 min</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Aerobic Cardio & Jump Rope</h3>
+                        <p class="text-xs text-slate-400 mb-4">High-energy jump rope intervals mixed with jumping jacks.</p>
+                        
+                        <div class="space-y-2 mb-6">
+                            <div class="text-xs bg-slate-800/80 p-2.5 rounded-lg text-slate-300">
+                                <span class="font-bold text-brand-400">Warm-up:</span> 5 min dynamic warmup
+                            </div>
+                            <div class="text-xs bg-slate-800/80 p-2.5 rounded-lg text-slate-300">
+                                <span class="font-bold text-cyan-400">Cool-down:</span> Calf and hamstring stretching
+                            </div>
+                            <div class="text-xs bg-slate-800/80 p-2.5 rounded-lg text-slate-300">
+                                <span class="font-bold text-indigo-400">Goal:</span> Cardiovascular fitness
+                            </div>
+                        </div>
+                    </div>
+
+                    <button onclick="toggleWorkout('Friday', this)" id="btn-Friday" class="w-full py-2.5 rounded-xl border border-slate-700 bg-slate-800 hover:bg-emerald-600 hover:border-emerald-500 text-xs font-bold text-white transition-all flex items-center justify-center gap-2">
+                        <i class="fa-regular fa-circle-check"></i>
+                        <span>Mark as Completed</span>
+                    </button>
+                </div>
+
+                <!-- Saturday -->
+                <div class="timetable-card glass-card p-6 rounded-2xl border border-slate-800 flex flex-col justify-between" data-day="Saturday">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="px-3 py-1 rounded-full bg-purple-500/10 text-purple-400 text-xs font-bold border border-purple-500/20">
+                                Saturday
+                            </span>
+                            <span class="text-xs text-slate-400"><i class="fa-regular fa-clock mr-1"></i>45 min</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Team Sports (Football/Basketball)</h3>
+                        <p class="text-xs text-slate-400 mb-4">Recreational team sport session with classmates or friends.</p>
+                        
+                        <div class="space-y-2 mb-6">
+                            <div class="text-xs bg-slate-800/80 p-2.5 rounded-lg text-slate-300">
+                                <span class="font-bold text-brand-400">Warm-up:</span> Pre-game light jog and drills
+                            </div>
+                            <div class="text-xs bg-slate-800/80 p-2.5 rounded-lg text-slate-300">
+                                <span class="font-bold text-cyan-400">Cool-down:</span> Post-match full body stretch
+                            </div>
+                            <div class="text-xs bg-slate-800/80 p-2.5 rounded-lg text-slate-300">
+                                <span class="font-bold text-indigo-400">Goal:</span> Agility and social teamwork
+                            </div>
+                        </div>
+                    </div>
+
+                    <button onclick="toggleWorkout('Saturday', this)" id="btn-Saturday" class="w-full py-2.5 rounded-xl border border-slate-700 bg-slate-800 hover:bg-emerald-600 hover:border-emerald-500 text-xs font-bold text-white transition-all flex items-center justify-center gap-2">
+                        <i class="fa-regular fa-circle-check"></i>
+                        <span>Mark as Completed</span>
+                    </button>
+                </div>
+
+                <!-- Sunday -->
+                <div class="timetable-card glass-card p-6 rounded-2xl border border-slate-800 flex flex-col justify-between md:col-span-2 lg:col-span-3" data-day="Sunday">
+                    <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+                        <div>
+                            <div class="flex items-center gap-3 mb-2">
+                                <span class="px-3 py-1 rounded-full bg-blue-500/10 text-blue-400 text-xs font-bold border border-blue-500/20">
+                                    Sunday
+                                </span>
+                                <span class="text-xs text-slate-400"><i class="fa-solid fa-bed mr-1"></i>Full Rest Day</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-white">Full Rest Day</h3>
+                            <p class="text-xs text-slate-400 mt-1">Allows muscles to repair, prevents burnout, and recharges energy for the upcoming week.</p>
+                        </div>
+                        <button onclick="toggleWorkout('Sunday', this)" id="btn-Sunday" class="px-6 py-2.5 rounded-xl border border-slate-700 bg-slate-800 hover:bg-emerald-600 hover:border-emerald-500 text-xs font-bold text-white transition-all flex items-center gap-2">
+                            <i class="fa-regular fa-circle-check"></i>
+                            <span>Complete Week</span>
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- STEP 3: LIFESTYLE ADVICE & WIDGETS -->
+    <section id="advice" class="py-20 px-4 max-w-7xl mx-auto">
+        <div class="text-center max-w-2xl mx-auto mb-16">
+            <span class="text-brand-400 font-bold text-sm tracking-wider uppercase">STEP 3</span>
+            <h2 class="text-3xl md:text-4xl font-extrabold text-white mt-1">Healthy Lifestyle Advice for Teens</h2>
+            <p class="text-slate-400 text-sm mt-2">
+                Essential recommendations covering nutrition, hydration, sleep hygiene, and mental well-being.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+            <!-- Tip 1 -->
+            <div class="glass-card rounded-2xl overflow-hidden glass-card-hover transition-all">
+                <img src="https://images.unsplash.com/photo-1498837167922-ddd27525d352?q=80&w=500&auto=format&fit=crop" 
+                     alt="Healthy Eating" class="w-full h-36 object-cover">
+                <div class="p-4">
+                    <div class="text-xs font-bold text-brand-400 mb-1">01. NUTRITION</div>
+                    <h4 class="font-bold text-white mb-2 text-sm">Healthy Eating</h4>
+                    <p class="text-slate-300 text-xs leading-relaxed">
+                        Eat nutrient-rich meals daily containing fresh fruits, vegetables, whole grains, and lean proteins.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Tip 2 - HYDRATION WITH FIXED/SAFE IMAGE URL & FALLBACK -->
+            <div class="glass-card rounded-2xl overflow-hidden glass-card-hover transition-all">
+                <img src="https://images.unsplash.com/photo-1548839140-29a749e1bc4e?q=80&w=500&auto=format&fit=crop" 
+                     onerror="this.src='https://images.unsplash.com/photo-1523362628745-0c100150b504?q=80&w=500&auto=format&fit=crop'"
+                     alt="Drinking Water Hydration" class="w-full h-36 object-cover">
+                <div class="p-4">
+                    <div class="text-xs font-bold text-cyan-400 mb-1">02. HYDRATION</div>
+                    <h4 class="font-bold text-white mb-2 text-sm">Drinking Water</h4>
+                    <p class="text-slate-300 text-xs leading-relaxed">
+                        Drink at least 1.5–2 liters of clean water daily to stay hydrated and boost focus.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Tip 3 -->
+            <div class="glass-card rounded-2xl overflow-hidden glass-card-hover transition-all">
+                <img src="https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?q=80&w=500&auto=format&fit=crop" 
+                     alt="Sleeping Habits" class="w-full h-36 object-cover">
+                <div class="p-4">
+                    <div class="text-xs font-bold text-indigo-400 mb-1">03. SLEEP HYGIENE</div>
+                    <h4 class="font-bold text-white mb-2 text-sm">Sleeping Habits</h4>
+                    <p class="text-slate-300 text-xs leading-relaxed">
+                        Maintain a consistent sleep schedule and aim for 8–9 hours of sleep every night.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Tip 4 -->
+            <div class="glass-card rounded-2xl overflow-hidden glass-card-hover transition-all">
+                <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?q=80&w=500&auto=format&fit=crop" 
+                     alt="Reducing Screen Time" class="w-full h-36 object-cover">
+                <div class="p-4">
+                    <div class="text-xs font-bold text-rose-400 mb-1">04. DIGITAL DETOX</div>
+                    <h4 class="font-bold text-white mb-2 text-sm">Reducing Screen Time</h4>
+                    <p class="text-slate-300 text-xs leading-relaxed">
+                        Limit recreational screen time on smartphones and computers to under 2 hours daily.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Tip 5 -->
+            <div class="glass-card rounded-2xl overflow-hidden glass-card-hover transition-all">
+                <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?q=80&w=500&auto=format&fit=crop" 
+                     alt="Managing Stress" class="w-full h-36 object-cover">
+                <div class="p-4">
+                    <div class="text-xs font-bold text-emerald-400 mb-1">05. MENTAL WELLNESS</div>
+                    <h4 class="font-bold text-white mb-2 text-sm">Managing Stress</h4>
+                    <p class="text-slate-300 text-xs leading-relaxed">
+                        Practice deep breathing exercises, mindfulness, or hobbies to reduce academic anxiety.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Tip 6 -->
+            <div class="glass-card rounded-2xl overflow-hidden glass-card-hover transition-all">
+                <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=500&auto=format&fit=crop" 
+                     alt="Staying Motivated" class="w-full h-36 object-cover">
+                <div class="p-4">
+                    <div class="text-xs font-bold text-amber-400 mb-1">06. MOTIVATION</div>
+                    <h4 class="font-bold text-white mb-2 text-sm">Staying Motivated</h4>
+                    <p class="text-slate-300 text-xs leading-relaxed">
+                        Work out with a buddy, log your milestones, and celebrate every small achievement.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Tip 7 -->
+            <div class="glass-card rounded-2xl overflow-hidden glass-card-hover transition-all">
+                <img src="https://images.unsplash.com/photo-1561758033-d89a9ad46330?q=80&w=500&auto=format&fit=crop" 
+                     alt="Avoiding Junk Food" class="w-full h-36 object-cover">
+                <div class="p-4">
+                    <div class="text-xs font-bold text-purple-400 mb-1">07. HEALTHY CHOICES</div>
+                    <h4 class="font-bold text-white mb-2 text-sm">Avoiding Junk Food</h4>
+                    <p class="text-slate-300 text-xs leading-relaxed">
+                        Replace sugary sodas and ultra-processed snacks with water, nuts, and fresh fruits.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Tip 8 -->
+            <div class="glass-card rounded-2xl overflow-hidden glass-card-hover transition-all">
+                <img src="https://images.unsplash.com/photo-1507398941214-572c25f4b1dc?q=80&w=500&auto=format&fit=crop" 
+                     alt="Good Posture" class="w-full h-36 object-cover">
+                <div class="p-4">
+                    <div class="text-xs font-bold text-teal-400 mb-1">08. BODY CARE</div>
+                    <h4 class="font-bold text-white mb-2 text-sm">Correct Posture</h4>
+                    <p class="text-slate-300 text-xs leading-relaxed">
+                        Keep your spine straight while studying or using mobile devices to protect joint health.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Interactive Teen Widgets Section -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- Widget 1: Water Hydration Tracker -->
+            <div class="glass-card p-6 rounded-2xl border border-cyan-500/30">
+                <div class="flex items-center justify-between mb-4">
+                    <div class="flex items-center gap-3">
+                        <i class="fa-solid fa-glass-water text-cyan-400 text-2xl"></i>
+                        <h3 class="font-bold text-lg text-white">Daily Water Hydration Tracker</h3>
+                    </div>
+                    <span id="water-count" class="text-xs font-extrabold px-3 py-1 bg-cyan-950 text-cyan-400 rounded-full border border-cyan-800">
+                        0 / 8 Glasses
+                    </span>
+                </div>
+                <p class="text-xs text-slate-400 mb-6">Click the button each time you drink a glass of water (Target: 2 Liters).</p>
+                
+                <div class="w-full bg-slate-800 h-4 rounded-full overflow-hidden mb-6">
+                    <div id="water-bar" class="bg-cyan-400 h-full w-0 transition-all duration-300"></div>
+                </div>
+
+                <div class="flex gap-3">
+                    <button onclick="addWater()" class="flex-1 py-3 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold text-xs transition-all flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-plus"></i> +1 Glass of Water
+                    </button>
+                    <button onclick="resetWater()" class="px-4 py-3 rounded-xl bg-slate-800 text-slate-400 hover:text-white text-xs transition-all" title="Reset Water Tracker">
+                        <i class="fa-solid fa-rotate-right"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Widget 2: Screen Time Calculator -->
+            <div class="glass-card p-6 rounded-2xl border border-rose-500/30">
+                <div class="flex items-center justify-between mb-4">
+                    <div class="flex items-center gap-3">
+                        <i class="fa-solid fa-mobile-screen-button text-rose-400 text-2xl"></i>
+                        <h3 class="font-bold text-lg text-white">Screen Time Impact Calculator</h3>
+                    </div>
+                </div>
+                <p class="text-xs text-slate-400 mb-4">How many hours per day do you spend on your smartphone?</p>
+                
+                <input type="range" id="screen-range" min="1" max="10" value="4" oninput="calculateScreenTime(this.value)" class="w-full accent-rose-500 bg-slate-800 rounded-lg cursor-pointer mb-4">
+                
+                <div class="flex items-center justify-between text-xs mb-4">
+                    <span class="text-slate-400">Daily: <strong id="screen-val" class="text-rose-400 text-sm">4 Hours</strong></span>
+                    <span class="text-slate-400">Time spent yearly: <strong id="screen-year" class="text-rose-400 text-sm">61 Days</strong></span>
+                </div>
+
+                <div id="screen-advice" class="text-xs p-3 rounded-xl bg-slate-800 text-slate-300 border border-slate-700">
+                    💡 **Tip:** Reducing screen time to 2 hours daily saves over 30 full days every year!
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- STEP 4: FITNESS CAMPAIGN SHOWCASE -->
+    <section id="campaign" class="py-20 px-4 bg-slate-900/50 border-y border-slate-800">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-brand-400 font-bold text-sm tracking-wider uppercase">STEP 4</span>
+                <h2 class="text-3xl md:text-4xl font-extrabold text-white mt-1">Create a Fitness Campaign</h2>
+                <p class="text-slate-400 text-sm mt-2">
+                    An awareness campaign encouraging teenagers to become more physically active.
+                </p>
+            </div>
+
+            <div class="relative rounded-3xl overflow-hidden glass-card p-8 md:p-12 mb-12 border border-brand-500/30">
+                <div class="absolute -right-20 -bottom-20 w-80 h-80 bg-brand-500/10 rounded-full blur-3xl pointer-events-none"></div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                    <div>
+                        <span class="px-3 py-1 rounded-full bg-brand-500/20 text-brand-400 text-xs font-bold border border-brand-500/30">
+                            CAMPAIGN TITLE
+                        </span>
+                        <h3 class="text-3xl md:text-4xl font-black text-white mt-3 mb-2">Active Teen, Bright Future!</h3>
+                        <p class="text-brand-400 font-bold text-lg mb-6">Slogan: "Move Today, Lead Tomorrow!"</p>
+                        
+                        <div class="space-y-3">
+                            <div class="flex items-center gap-3 text-xs text-slate-300 bg-slate-800/60 p-2.5 rounded-xl">
+                                <i class="fa-solid fa-star text-amber-400"></i>
+                                <span>1. Start small: 10 minutes a day is better than zero!</span>
+                            </div>
+                            <div class="flex items-center gap-3 text-xs text-slate-300 bg-slate-800/60 p-2.5 rounded-xl">
+                                <i class="fa-solid fa-star text-amber-400"></i>
+                                <span>2. Drink water continuously before you feel thirsty!</span>
+                            </div>
+                            <div class="flex items-center gap-3 text-xs text-slate-300 bg-slate-800/60 p-2.5 rounded-xl">
+                                <i class="fa-solid fa-star text-amber-400"></i>
+                                <span>3. Find a workout buddy to keep each other accountable!</span>
+                            </div>
+                            <div class="flex items-center gap-3 text-xs text-slate-300 bg-slate-800/60 p-2.5 rounded-xl">
+                                <i class="fa-solid fa-star text-amber-400"></i>
+                                <span>4. Listen to your favorite playlist during workouts!</span>
+                            </div>
+                            <div class="flex items-center gap-3 text-xs text-slate-300 bg-slate-800/60 p-2.5 rounded-xl">
+                                <i class="fa-solid fa-star text-amber-400"></i>
+                                <span>5. Celebrate your weekly progress and consistency!</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="glass-card p-6 rounded-2xl border border-indigo-500/30 bg-slate-900/80">
+                        <div class="flex items-center gap-3 mb-4">
+                            <div class="w-10 h-10 rounded-xl bg-indigo-500/20 text-indigo-400 flex items-center justify-center font-bold">
+                                <i class="fa-solid fa-trophy"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white text-sm">Weekly Challenge</h4>
+                                <span class="text-xs text-indigo-400 font-semibold">One Weekly Challenge</span>
+                            </div>
+                        </div>
+
+                        <div class="bg-slate-800 p-4 rounded-xl border border-slate-700 mb-6">
+                            <h5 class="text-white font-bold text-sm mb-1">"No-Screen Sunday & 5,000 Steps Challenge"</h5>
+                            <p class="text-xs text-slate-400">Disconnect from screens every Sunday and hit a minimum of 5,000 active steps outdoors.</p>
+                        </div>
+
+                        <div class="space-y-2 mb-4">
+                            <div class="flex justify-between text-xs">
+                                <span class="text-slate-400">Step Target:</span>
+                                <span id="steps-text" class="text-brand-400 font-bold">0 / 5,000 Steps</span>
+                            </div>
+                            <div class="w-full bg-slate-800 h-3 rounded-full overflow-hidden">
+                                <div id="steps-bar" class="bg-gradient-brand h-full w-0 transition-all duration-500"></div>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-2">
+                            <button onclick="addSteps()" class="flex-1 py-3 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-xs transition-all flex items-center justify-center gap-2">
+                                <i class="fa-solid fa-shoe-prints"></i> +500 Steps Added
+                            </button>
+                            <button onclick="resetSteps()" class="px-4 py-3 rounded-xl bg-slate-800 text-slate-400 hover:text-white text-xs transition-all" title="Reset Steps Tracker">
+                                <i class="fa-solid fa-rotate-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- STEP 5: PRESENTATION DECK (GROUP SPEECH) -->
+    <section id="presentation" class="py-20 px-4 max-w-7xl mx-auto">
+        <div class="text-center max-w-2xl mx-auto mb-12">
+            <span class="text-brand-400 font-bold text-sm tracking-wider uppercase">STEP 5</span>
+            <h2 class="text-3xl md:text-4xl font-extrabold text-white mt-1">Present Your Project</h2>
+            <p class="text-slate-400 text-sm mt-2">
+                A structured 6–8 minute group presentation deck. Click each group member to review their speech script.
+            </p>
+        </div>
+
+        <div class="glass-card rounded-3xl overflow-hidden border border-slate-800">
+            <div class="flex border-b border-slate-800 overflow-x-auto" id="speaker-tabs">
+                <button onclick="switchSpeaker(1, this)" class="speaker-tab active-tab flex-1 py-4 px-6 text-xs md:text-sm font-bold text-center border-b-2 border-brand-400 bg-slate-800/50 text-brand-400 transition-all whitespace-nowrap">
+                    <i class="fa-solid fa-user-tie mr-2"></i>Javohir
+                </button>
+                <button onclick="switchSpeaker(2, this)" class="speaker-tab flex-1 py-4 px-6 text-xs md:text-sm font-bold text-center text-slate-400 hover:text-white transition-all whitespace-nowrap">
+                    <i class="fa-solid fa-running mr-2"></i>Hasanboy
+                </button>
+                <button onclick="switchSpeaker(3, this)" class="speaker-tab flex-1 py-4 px-6 text-xs md:text-sm font-bold text-center text-slate-400 hover:text-white transition-all whitespace-nowrap">
+                    <i class="fa-solid fa-chart-line mr-2"></i>Ilhomjon
+                </button>
+                <button onclick="switchSpeaker(4, this)" class="speaker-tab flex-1 py-4 px-6 text-xs md:text-sm font-bold text-center text-slate-400 hover:text-white transition-all whitespace-nowrap">
+                    <i class="fa-solid fa-flag-checkered mr-2"></i>Javohir
+                </button>
+            </div>
+
+            <div class="p-6 md:p-10" id="speaker-content">
+                <!-- Content injected dynamically via JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="py-12 border-t border-slate-800 glass-card">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <div class="flex items-center justify-center gap-2 mb-4">
+                <div class="w-8 h-8 rounded-lg bg-gradient-brand flex items-center justify-center text-slate-950 font-bold text-sm">
+                    <i class="fa-solid fa-heart-pulse"></i>
+                </div>
+                <span class="font-extrabold text-white text-base">FIT<span class="text-brand-400">TEEN</span></span>
+            </div>
+            <p class="text-xs text-slate-400 mb-4 max-w-md mx-auto">
+                Designed for English Class Project Work: Healthy Lifestyle & Personal Fitness Programme.
+            </p>
+            <div class="text-[11px] text-slate-500">
+                &copy; 2026 FitTeen Project Work. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT LOGIC WITH LOCALSTORAGE PERSISTENCE -->
+    <script>
+        // --- 1. FILTER DAYS IN TIMETABLE ---
+        function filterDays(day, element) {
+            const buttons = document.querySelectorAll('#day-filters button');
+            buttons.forEach(btn => {
+                btn.classList.remove('bg-gradient-brand', 'text-slate-950');
+                btn.classList.add('bg-slate-800', 'text-slate-300');
+            });
+
+            if (element) {
+                element.classList.remove('bg-slate-800', 'text-slate-300');
+                element.classList.add('bg-gradient-brand', 'text-slate-950');
+            }
+
+            const cards = document.querySelectorAll('.timetable-card');
+            cards.forEach(card => {
+                if (day === 'all' || card.getAttribute('data-day') === day) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        // --- 2. WORKOUT TIMETABLE LOCALSTORAGE LOGIC ---
+        let workoutState = JSON.parse(localStorage.getItem('fitteen_workouts')) || {};
+
+        function toggleWorkout(day, btn) {
+            workoutState[day] = !workoutState[day];
+            localStorage.setItem('fitteen_workouts', JSON.stringify(workoutState));
+            renderWorkoutState(day, btn);
+        }
+
+        function renderWorkoutState(day, btn) {
+            const isCompleted = !!workoutState[day];
+            if (isCompleted) {
+                btn.classList.remove('bg-slate-800', 'border-slate-700');
+                btn.classList.add('bg-emerald-600', 'border-emerald-500');
+                btn.innerHTML = `<i class="fa-solid fa-circle-check"></i> <span>Completed!</span>`;
+            } else {
+                btn.classList.remove('bg-emerald-600', 'border-emerald-500');
+                btn.classList.add('bg-slate-800', 'border-slate-700');
+                btn.innerHTML = `<i class="fa-regular fa-circle-check"></i> <span>Mark as Completed</span>`;
+            }
+        }
+
+        function loadSavedWorkouts() {
+            const days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+            days.forEach(day => {
+                const btn = document.getElementById(`btn-${day}`);
+                if (btn) {
+                    renderWorkoutState(day, btn);
+                }
+            });
+        }
+
+        // --- 3. WATER HYDRATION TRACKER WITH LOCALSTORAGE ---
+        let waterGlasses = parseInt(localStorage.getItem('fitteen_water')) || 0;
+
+        function addWater() {
+            if (waterGlasses < 8) {
+                waterGlasses++;
+                localStorage.setItem('fitteen_water', waterGlasses);
+                updateWaterUI();
+            }
+        }
+
+        function resetWater() {
+            waterGlasses = 0;
+            localStorage.setItem('fitteen_water', waterGlasses);
+            updateWaterUI();
+        }
+
+        function updateWaterUI() {
+            document.getElementById('water-count').innerText = `${waterGlasses} / 8 Glasses`;
+            const percentage = (waterGlasses / 8) * 100;
+            document.getElementById('water-bar').style.width = `${percentage}%`;
+        }
+
+        // --- 4. SCREEN TIME CALCULATOR WITH LOCALSTORAGE ---
+        function calculateScreenTime(val, save = true) {
+            if (save) {
+                localStorage.setItem('fitteen_screentime', val);
+            }
+            document.getElementById('screen-range').value = val;
+            document.getElementById('screen-val').innerText = `${val} Hours`;
+            const daysLost = Math.round((val * 365) / 24);
+            document.getElementById('screen-year').innerText = `${daysLost} Days`;
+
+            const adviceBox = document.getElementById('screen-advice');
+            if (val > 4) {
+                adviceBox.innerHTML = `⚠️ **Warning:** ${val} hours daily is quite high! Consider reducing screen time to protect your eyes and sleep.`;
+                adviceBox.className = "text-xs p-3 rounded-xl bg-rose-950/50 text-rose-300 border border-rose-800/50";
+            } else {
+                adviceBox.innerHTML = `💡 **Great Job!** Your screen time is within a healthy range. Keep up the balance!`;
+                adviceBox.className = "text-xs p-3 rounded-xl bg-emerald-950/50 text-emerald-300 border border-emerald-800/50";
+            }
+        }
+
+        // --- 5. STEPS CHALLENGE TRACKER WITH LOCALSTORAGE ---
+        let currentSteps = parseInt(localStorage.getItem('fitteen_steps')) || 0;
+
+        function addSteps() {
+            if (currentSteps < 5000) {
+                currentSteps += 500;
+                if (currentSteps > 5000) currentSteps = 5000;
+                localStorage.setItem('fitteen_steps', currentSteps);
+                updateStepsUI();
+            }
+        }
+
+        function resetSteps() {
+            currentSteps = 0;
+            localStorage.setItem('fitteen_steps', currentSteps);
+            updateStepsUI();
+        }
+
+        function updateStepsUI() {
+            document.getElementById('steps-text').innerText = `${currentSteps.toLocaleString()} / 5,000 Steps`;
+            const percentage = (currentSteps / 5000) * 100;
+            document.getElementById('steps-bar').style.width = `${percentage}%`;
+        }
+
+        // --- 6. PRESENTATION DECK SWITCHER ---
+        const speakersData = {
+            1: {
+                title: "Introduction & Campaign Goals",
+                badge: "M1",
+                role: "Introducing the project title, team objective, and campaign vision.",
+                speech: "Hello everyone! Today our group presents the 'Active Teen, Bright Future' fitness programme. We designed this plan because physical activity helps teenagers stay energetic, improves mental well-being, and boosts confidence. Our core objective is to show how teens can build realistic, long-term fitness habits without needing expensive equipment!"
+            },
+            2: {
+                title: "4-Week Programme & Exercises",
+                badge: "M2",
+                role: "Explaining exercise selection, weekly timetable, warm-ups, and rest days.",
+                speech: "Our 4-week fitness plan balances aerobic exercise, strength training, and flexibility routines. We selected accessible activities like jogging, yoga, and football because they are easy to do anywhere. Each session takes 25 to 45 minutes with mandatory warm-ups, cool-downs, and built-in rest days for full recovery."
+            },
+            3: {
+                title: "Expected Health Benefits & Challenges",
+                badge: "M3",
+                role: "Discussing physiological benefits, potential risks, and staying motivated.",
+                speech: "The expected health benefits include deeper sleep, reduced academic stress, and stronger endurance. However, teenagers may face challenges like busy school schedules or lack of motivation. We recommend setting small daily goals, tracking progress, and exercising with a workout buddy to stay accountable!"
+            },
+            4: {
+                title: "Healthy Lifestyle Advice & Conclusion",
+                badge: "M4",
+                role: "Summarizing nutrition, screen time habits, and closing the presentation.",
+                speech: "In conclusion, staying active is not just about exercise; it's a complete lifestyle! By cutting screen time, drinking 2 liters of water daily, and prioritizing 8 hours of sleep, every teenager can build a healthier future. Remember our campaign slogan: 'Move Today, Lead Tomorrow!' Thank you for your attention!"
+            }
+        };
+
+        function switchSpeaker(num, btnElement) {
+            const tabs = document.querySelectorAll('.speaker-tab');
+            tabs.forEach(tab => {
+                tab.classList.remove('border-b-2', 'border-brand-400', 'bg-slate-800/50', 'text-brand-400');
+                tab.classList.add('text-slate-400');
+            });
+
+            if (btnElement) {
+                btnElement.classList.remove('text-slate-400');
+                btnElement.classList.add('border-b-2', 'border-brand-400', 'bg-slate-800/50', 'text-brand-400');
+            }
+
+            const data = speakersData[num];
+            document.getElementById('speaker-content').innerHTML = `
+                <div class="speaker-slide block">
+                    <div class="flex items-center gap-3 mb-6">
+                        <span class="w-12 h-12 rounded-2xl bg-emerald-500/20 text-emerald-400 font-extrabold flex items-center justify-center text-lg">${data.badge}</span>
+                        <div>
+                            <h3 class="text-xl font-bold text-white">${data.title}</h3>
+                            <p class="text-xs text-slate-400">${data.role}</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-slate-900/80 p-6 rounded-2xl border border-slate-800">
+                        <h4 class="text-xs font-bold text-brand-400 uppercase tracking-wider mb-3">Presentation Speech Script:</h4>
+                        <blockquote class="text-base text-slate-200 italic leading-relaxed">
+                            "${data.speech}"
+                        </blockquote>
+                    </div>
+                </div>
+            `;
+        }
+
+        // --- INITIALIZATION ON PAGE LOAD ---
+        window.addEventListener('DOMContentLoaded', () => {
+            loadSavedWorkouts();
+            updateWaterUI();
+            updateStepsUI();
+            
+            const savedScreen = localStorage.getItem('fitteen_screentime') || 4;
+            calculateScreenTime(savedScreen, false);
+
+            const firstTab = document.querySelector('.speaker-tab');
+            switchSpeaker(1, firstTab);
+        });
+    </script>
+</body>
+</html>
